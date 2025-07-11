@@ -1,0 +1,1596 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Book House</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+<body>
+
+   <!-- Top Contact Bar -->
+<div class="top-contact-bar">
+    <div class="container">
+        <div class="contact-bar-content">
+            <div class="contact-bar-item">
+                <i class="fab fa-whatsapp"></i>
+                <span>+1 (646) 453 4543</span>
+            </div>
+            <div class="contact-bar-item">
+                <i class="fas fa-envelope"></i>
+                <span>info@royalbookhouse.com</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>// Top Contact Bar Interactions
+document.addEventListener('DOMContentLoaded', function() {
+   
+    const whatsappItem = document.querySelector('.contact-bar-item:first-child');
+    if (whatsappItem) {
+        whatsappItem.addEventListener('click', function() {
+            const phoneNumber = '+13239168484'; // Replace with your WhatsApp number
+            const message = 'Hello! I would like to inquire about your services.';
+            const whatsappUrl = `https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    }
+
+    const emailItem = document.querySelector('.contact-bar-item:last-child');
+    if (emailItem) {
+        emailItem.addEventListener('click', function() {
+            const email = 'contact@thehouseofbestsellers.com';
+            const subject = 'Inquiry about your services';
+            const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+            window.location.href = mailtoUrl;
+        });
+    }
+});</script>
+<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/images/Logo RoyalBookHouse .png" alt="Your Brand Logo" class="brand-logo">
+            </a>
+            
+            
+            <button class="navbar-toggler custom-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Our Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Book Publishing</a></li>
+                            <li><a class="dropdown-item" href="#">Book Marketing</a></li>
+                            <li><a class="dropdown-item" href="#">Book Writing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Success Stories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+                
+                <a href="#" class="live-chat-btn">Live Chat</a>
+            </div>
+        </div>
+    </nav>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggler = document.querySelector('.custom-toggler');
+            const navbarCollapse = document.getElementById('navbarNav');
+            // Initialize Bootstrap Collapse without auto-toggle
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+
+            // Manually toggle menu when toggler is clicked
+            navbarToggler.addEventListener('click', function(event) {
+                event.stopPropagation(); // Prevent this click from bubbling up to the document listener
+
+                if (navbarCollapse.classList.contains('show')) {
+                    bsCollapse.hide();
+                    navbarToggler.setAttribute('aria-expanded', 'false');
+                } else {
+                    bsCollapse.show();
+                    navbarToggler.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            document.addEventListener('click', function(event) {
+                const isClickInsideNav = navbarCollapse.contains(event.target);
+                const isClickOnToggler = navbarToggler.contains(event.target);
+
+                if (navbarCollapse.classList.contains('show') && !isClickInsideNav && !isClickOnToggler) {
+                    bsCollapse.hide();
+                    navbarToggler.setAttribute('aria-expanded', 'false'); 
+                }
+            });
+            
+            const navLinks = document.querySelectorAll('#navbarNav .nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+               
+                    if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+                        bsCollapse.hide();
+                        navbarToggler.setAttribute('aria-expanded', 'false'); 
+                    }
+                });
+            });
+
+            // Top Contact Bar Interactions
+            const whatsappItem = document.querySelector('.top-contact-bar .contact-bar-item:first-child');
+            if (whatsappItem) {
+                whatsappItem.addEventListener('click', function() {
+                    const phoneNumber = '+13239168484'; 
+                    const message = 'Hello! I would like to inquire about your services.';
+                    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, '_blank');
+                });
+            }
+
+            const emailItem = document.querySelector('.top-contact-bar .contact-bar-item:last-child');
+            if (emailItem) {
+                emailItem.addEventListener('click', function() {
+                    const email = 'contact@thehouseofbestsellers.com';
+                    const subject = 'Inquiry about your services';
+                    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+                    window.location.href = mailtoUrl;
+                });
+            }
+
+            
+            const footerLinks = document.querySelectorAll('.footer-link');
+            footerLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+
+     
+            const socialLinks = document.querySelectorAll('.social-link');
+            socialLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const platform = this.querySelector('i').className;
+                    console.log(`Social media click: ${platform}`);
+                    
+                });
+            });
+
+            
+            document.querySelectorAll('.custom-footer .contact-item').forEach((item, index) => {
+                if (index === 0) { // Phone
+                    item.addEventListener('click', function() {
+                        const phoneNumber = this.querySelector('.contact-text').textContent;
+                        window.location.href = `tel:${phoneNumber.replace(/\D/g, '')}`;
+                    });
+                    item.style.cursor = 'pointer';
+                } else if (index === 1) { 
+                    item.addEventListener('click', function() {
+                        const email = this.querySelector('.contact-text').textContent;
+                        window.location.href = `mailto:${email}`;
+                    });
+                    item.style.cursor = 'pointer';
+                }
+            });
+
+            const currentYear = new Date().getFullYear();
+            const copyrightText = document.querySelector('.copyright-text');
+            if (copyrightText) {
+                copyrightText.innerHTML = copyrightText.innerHTML.replace('2025', currentYear);
+            }
+        });
+    </script>
+
+    <!-- Hero Section -->
+     
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1>Best Book Publishing Services for <span class="highlight">Aspiring</span> Authors</h1>
+                        
+                        <h2>Ready To <span class="highlight">Become a Published Author</span> Today?</h2>
+                        
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <div class="check-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                Amazon KDP Publishing to Grow Audience Reach.
+                            </li>
+                            <li class="feature-item">
+                                <div class="check-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                Full Market Research Analysis and Segmentation.
+                            </li>
+                            <li class="feature-item">
+                                <div class="check-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                Expert Recommendations to Increase Sales.
+                            </li>
+                            <li class="feature-item">
+                                <div class="check-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                Multi-Platform Presence to Establish Your Brand.
+                            </li>
+                        </ul>
+                        
+                        <div class="trust-badges">
+                            <div class="badge-item">
+                                <div class="clutch-badge">
+                                    <img src="assets/images/clutch.png" style="height: 90%; width: 103px;" alt="">
+                                </div>
+                            </div>
+                            <div class="badge-item google-badge">
+                             <img src="assets/images/google.png" style="height: 100%; width: 130px;" alt="">
+                                    <div>
+
+                                </div>
+                            </div>
+                            <div class="badge-item trustpilot-badge">
+                                <img src="assets/images/trustpilot.png" style="height: 100%; width: 130px;" alt="">
+                                <div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-buttons">
+                            <button class="btn btn-primary-custom">Get Started</button>
+                            <a href="tel:+13239168484" class="btn-outline-custom">
+                                <i class="fas fa-phone"></i>
+                                +1 (646) 453 4543
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="assets/images/Royal book house_Монтажная область 1.png" alt="Book Publishing Services - Person reading with bookshelves" class="hero-illustration">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Consultation Section -->
+<section class="consultation-section1">
+    <div class="container">
+        <div class="consultation-container">
+            <div class="row align-items-center">
+
+                
+                <div class="col-lg-6">
+                    <div class="consultation-image">
+                        <img src="assets/images/image 21.png" alt="Free Publishing Consultation" class="consultation-img">
+                    </div>
+                </div>
+
+              
+                <div class="col-lg-6">
+                    <div class="consultation-form">
+                        <h2 class="consultation-title">
+                            Request Free <span class="highlight">Publishing</span><br>
+                            <span class="highlight">Consultation.</span>
+                        </h2>
+
+                        <form id="consultationForm" class="consultation-form-fields"
+                              action="https://api.web3forms.com/submit"
+                              method="POST">
+
+                            <input type="hidden" name="access_key" value="b39c0d41-463b-4309-8f21-94ae9625c0ba">
+
+                          
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" name="name" class="form-control custom-input rounded-pill"
+                                           placeholder="Enter Full Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" name="email" class="form-control custom-input rounded-pill"
+                                           placeholder="Enter Email Here" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="tel" name="phone" class="form-control custom-input rounded-pill"
+                                           placeholder="Enter Phone Number" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <select name="service" class="form-select custom-select rounded-pill" required>
+                                        <option value="">Select Service</option>
+                                        <option value="Book Publishing">Book Publishing</option>
+                                        <option value="Book Marketing">Book Marketing</option>
+                                        <option value="Book Writing">Book Writing</option>
+                                        <option value="Editing Services">Editing Services</option>
+                                        <option value="Cover Design">Cover Design</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                       
+                            <div class="mb-4">
+                                <textarea name="message" class="form-control custom-textarea rounded-4"
+                                          rows="4" placeholder="Tell Us What You're Looking For" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-submit-custom w-100 rounded-pill">Submit</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Brands Slider Section -->
+<section class="brands-section">
+    <div class="container-fluid">
+        <div class="brands-content">
+            <h2 class="brands-title">Royal Book House, Your Best Choice For A Reason. Period!</h2>
+            
+            <div class="brands-slider-wrapper">
+                <div class="brands-slider" id="brandsSlider">
+                    <div class="brands-track" id="brandsTrack">
+                        <!-- Brand 1 -->
+                        <div class="brand-card">
+                            <img src="assets/images/addi-2.png" alt="Best Content Marketing 2023" class="brand-image">
+                        </div>
+                        
+                        <!-- Brand 2 -->
+                        <div class="brand-card">
+                            <img src="assets/images/addi-3 (1).webp" alt="Top Content Marketing Agencies" class="brand-image">
+                        </div>
+                        
+                        <!-- Brand 3 -->
+                        <div class="brand-card">
+                            <img src="assets/images/addi-8.webp" alt="Reviews.io 4.8 Rating" class="brand-image">
+                        </div>
+                        
+                        <!-- Brand 4 -->
+                        <div class="brand-card">
+                            <img src="assets/images/addi-4.webp" alt="Bark Certified" class="brand-image">
+                        </div>
+                        
+                        <!-- Brand 5 -->
+                        <div class="brand-card">
+                            <img src="assets/images/addi-5.webp" alt="Google Certified Publishing Partner" class="brand-image">
+                        </div>
+                        
+                        <!-- Brand 6 -->
+                        <div class="brand-card">
+                            <img src="assets/images/addi-1.webp" alt="Trustpilot Excellence" class="brand-image">
+                        </div>
+                         <div class="brand-card">
+                            <img src="assets/images/addi-3 (1).webp" alt="Trustpilot Excellence" class="brand-image">
+                        </div>
+                         <div class="brand-card">
+                            <img src="assets/images/addi-8.webp" alt="Trustpilot Excellence" class="brand-image">
+                        </div>
+                         <div class="brand-card">
+                            <img src="assets/images/addi-4.webp" alt="Trustpilot Excellence" class="brand-image">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="services-section">
+    <div class="container">
+        <div class="services-content">
+            <h2 class="services-title">
+                Your Author Needs, Our Publishing Expertise: <span class="highlight">Tailored Solutions for Success</span>
+            </h2>
+            
+            <div class="row">
+                <!-- Service Card 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Amazon Book Publishing Essentials</h3>
+                            <br>
+                            <p class="card-description">
+                                Ideal for authors focusing solely <span class="highlight">on Amazon</span>
+                            </p>
+                            <br>
+                        </div>
+                        
+                        <div class="card-pricing">
+                            <p class="pricing-text">Pricing Available Upon Request</p>
+                        </div>
+                        
+                        <div class="card-features">
+                            <h4 class="features-title">What you get:</h4>
+                            <div class="features-scroll-container">
+                                <ul class="features-list">
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Amazon KDP Publishing
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Formatting Check for All File Formats
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Multiple Print-Ready Formats (eBook, paperback, and hardcover)
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Amazon Keyword Research
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Amazon A+ Content
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Amazon Listing Optimization (author bio, book description, subtitle suggestions)
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <button class="btn btn-service-primary">Learn More</button>
+                        </div>
+                        
+                       
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Multi-Platform Publishing Bundle</h3>
+                            <br>
+                            <p class="card-description">
+                                Perfect for authors looking to distribute across <span class="highlight">various platforms</span>
+                            </p>
+                            <br>
+                        </div>
+                        
+                        <div class="card-pricing">
+                            <p class="pricing-text">Pricing Available Upon Request</p>
+                        </div>
+                        
+                        <div class="card-features">
+                            <h4 class="features-title">What you get:</h4>
+                            <div class="features-scroll-container">
+                                <ul class="features-list">
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Listing Optimization (author bio, book description, subtitle suggestions)
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Amazon Author Central Account Creation
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Amazon A+ Content
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Competitive Book Pricing Strategy
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Market & Research Analysis
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        ISBN Purchase Included
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Dedicated Publishing Expert
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <button class="btn btn-service-primary">Get A Quote</button>
+                        </div>
+                        
+                      
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Professional Publishing Solution</h3>
+                            <br>
+                            <p class="card-description">
+                                For a complete, expert-managed <span class="highlight">publishing experience</span>
+                            </p>
+                        </div>
+                        <br>
+                        <div class="card-pricing">
+                            <p class="pricing-text">Pricing Available Upon Request</p>
+                        </div>
+                        
+                        <div class="card-features">
+                            <h4 class="features-title">What you get:</h4>
+                            <h5 class="service-category">Professional Services</h5>
+                            <div class="features-scroll-container">
+                                <ul class="features-list">
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Thorough review of your manuscript.
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Editing: copy, line, and developmental (4 editors)
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        A thorough review of your Manuscript
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Layout Formatting and Adjustment
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Complete Author Package
+                                    </li>
+                                      <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Complete Author Package
+                                    </li>
+                                      <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Complete Author Package
+                                    </li>
+                                      <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Complete Author Package
+                                    </li>
+                                      <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Complete Author Package
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <button class="btn btn-service-primary">Get A Quote</button>
+                        </div>
+                        
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="genres-section">
+    <div class="container-fluid">
+        <div class="genres-content">
+            <h2 class="genres-title">Wide Range of Genres</h2>
+            
+            <div class="genres-slider-wrapper">
+                <div class="genres-slider" id="genresSlider">
+                    <div class="genres-track" id="genresTrack">
+                        <!-- Book 1 -->
+                        <div class="book-item">
+                            <img src="assets/images/Rectangle 74.png" alt="You Can't Tell A Book By Its Cover" class="book-cover">
+                        </div>
+                        
+                        <!-- Book 2 -->
+                        <div class="book-item">
+                            <img src="assets/images/Rectangle 75.png" alt="The Energy of Excitement by Michelle Courtney" class="book-cover">
+                        </div>
+                        
+                        <!-- Book 3 -->
+                        <div class="book-item">
+                            <img src="assets/images/Rectangle 76.png" alt="Tonka Wild Plains of Nevada by Jody Wrenn" class="book-cover">
+                        </div>
+                        
+                        <!-- Book 4 -->
+                        <div class="book-item">
+                            <img src="assets/images/Rectangle 77.png" alt="Mystery Novel" class="book-cover">
+                        </div>
+                        
+                        <!-- Book 5 -->
+                        <div class="book-item">
+                            <img src="assets/images/Rectangle 78.png" alt="Romance Novel" class="book-cover">
+                        </div>
+                        
+                        <!-- Book 6 -->
+                        <div class="book-item">
+                            <img src="assets/images/Rectangle 79.png" alt="Science Fiction" class="book-cover">
+                        </div>
+                        
+                        <!-- Book 7 -->
+                        <div class="book-item">
+                            <img src="assets/images/Rectangle 80.png" alt="Fantasy Adventure" class="book-cover">
+                        </div>
+                        
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="book-types-section mt-5">
+    <div class="container">
+        <div class="book-types-content">
+            <h2 class="book-types-title">Publish Multiple Types of Books</h2>
+            
+            <div class="book-categories-grid">
+                <!-- Row 1 -->
+                <div class="row mb-2">
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill">Business & Investing</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill">Children's Book</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill">Non-Fiction</div>
+                    </div>
+                </div>
+                
+                <!-- Row 2 -->
+                <div class="row mb-2">
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill">Literature & Fiction</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill">Mystery, Thriller & Suspense</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill">Science Fiction</div>
+                    </div>
+                </div>
+                
+                <!-- Row 3 -->
+                <div class="row mb-2">
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill">Teens & Young Adults</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill">Comics & Graphic Novels</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill">Biography</div>
+                    </div>
+                </div>
+                
+                <!-- Row 4 -->
+                <div class="row mb-5">
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill">Romance</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill">Short Stories</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill category-pill-highlight">...and more!</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="book-types-cta">
+                <button class="btn btn-book-call">Book a Free Call</button>
+                <button class="btn btn-live-chat">Start a Live Chat</button>
+            </div>
+        </div>
+    </div>
+</section>
+<br><br>
+
+<div class="text-center mb-2 mt-5 pb-4  ">
+    <h1 class="display-4 fw-bold text-dark mb-4">The Publishing Essentials</h1>
+    <p class="lead text-muted mx-auto" style="max-width: 800px;">
+        While your book's content is vital, how it looks is just as important for keeping readers happy and engaged. That's why we recommend taking advantage of our design services, which focus on enhancing your book's appeal both inside and out.
+    </p>
+</div>
+
+
+
+ <div class="super-section">
+    
+        <div class="super-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1 order-2">
+                    <div class="content-wrapper">
+                        <div>
+                            <div class="super-number">1</div>
+                            <h2 class="super-title">Cover Design</h2>
+                            <p class="super-description">
+                                OCreate visually stunning books with designs that captivate and engage. Our expert typography ensures that every word is not only readable but also impactful. We incorporate custom details tailored to your vision, enhancing the overall aesthetic. From unique cover art to carefully designed layouts, we make your book truly stand out. Let us transform your ideas into a visually striking reality that attracts and resonates with readers.
+                            </p>
+                            <a href="#" class="learn-more-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1">
+                    <img src="assets/images/Rectangle 65.png" alt="Research process" class="super-image">
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="super-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-1">
+                    <img src="assets/images/Rectangle 66.png" alt="Professional formatting" class="super-image">
+                </div>
+                <div class="col-lg-6 order-2">
+                    <div class="content-wrapper">
+                        <div>
+                            <div class="super-number">2</div>
+                            <h2 class="super-title">Formatting</h2>
+                            <p class="super-description">
+                                Our professional layouts ensure a seamless reading experience by adhering to the highest industry standards. We design each layout with the reader's ease in mind, incorporating intuitive navigation and clear, engaging visuals. By following best practices, we create content that not only looks polished but also enhances readability and accessibility. This approach guarantees that our materials are both aesthetically pleasing and functionally effective, providing a top-notch experience for all users.
+                            </p>
+                            <a href="#" class="learn-more-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="super-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1 order-2">
+                    <div class="content-wrapper">
+                        <div>
+                            <div class="super-number">3</div>
+                            <h2 class="super-title">Illustrations</h2>
+                            <p class="super-description">
+                                Enhance your book with captivating illustrations that bring your vision to life. Our diverse range of artistic styles ensures a unique and compelling look tailored to your narrative. From intricate details to bold, striking designs, our illustrations will enrich the overall aesthetic of your book. Each image is crafted to complement and elevate your content, creating a memorable visual experience for readers.
+                            </p>
+                            <a href="#" class="learn-more-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1">
+                    <img src="assets/images/Rectangle 67.png" alt="Creative illustrations" class="super-image">
+                </div>
+            </div>
+        </div>
+
+        <div class="super-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-1">
+                    <img src="assets/images/Rectangle 68.png" alt="Typography design" class="super-image">
+                </div>
+                <div class="col-lg-6 order-2">
+                    <div class="content-wrapper">
+                        <div>
+                            <div class="super-number">4</div>
+                            <h2 class="super-title">Editing</h2>
+                            <p class="super-description">
+                                With decades of editorial experience, we meticulously refine every aspect of your manuscript, ensuring impeccable structure, tone, grammar, and spelling. Our expertise guarantees a polished and professional finish, transforming your content into a seamless, engaging read. We focus on enhancing clarity and coherence, addressing even the smallest details to meet the highest standards. Rely on us to perfect your manuscript, making it not only error-free but also compelling and impactful.
+                            </p>
+                            <a href="#" class="learn-more-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     
+        <div class="super-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1 order-2">
+                    <div class="content-wrapper">
+                        <div>
+                            <div class="super-number">5</div>
+                            <h2 class="super-title">Book Proofreading</h2>
+                            <p class="super-description">
+                              Book Proofreading involves a comprehensive final review to eliminate typos, spelling mistakes, and grammatical errors. We carefully examine every sentence and punctuation mark to ensure clarity and coherence throughout your manuscript. Our focus is on enhancing readability while preserving your unique voice and style.
+                            </p>
+                            <a href="#" class="learn-more-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1">
+                    <img src="assets/images/Rectangle 69.png" alt="Brand identity design" class="super-image">
+                </div>
+            </div>
+        </div>
+
+    
+        <div class="super-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-1">
+                    <img src="assets/images/Rectangle 70.png" alt="Digital publishing platform" class="super-image">
+                </div>
+                <div class="col-lg-6 order-2">
+                    <div class="content-wrapper">
+                        <div>
+                            <div class="super-number">6</div>
+                            <h2 class="super-title">All Leading Publishing Platforms</h2>
+                            <p class="super-description">
+                               We ensure your book reaches a global audience by publishing it on all leading platforms, including Amazon, Apple Books, Audible, Google Play, and more. With our expertise, your work will be available to readers and listeners everywhere, maximizing its potential for success.
+                            </p>
+                            <a href="#" class="learn-more-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="super-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1 order-2">
+                    <div class="content-wrapper">
+                        <div>
+                            <div class="super-number">7</div>
+                            <h2 class="super-title">Printing</h2>
+                            <p class="super-description">
+                                With generations of printing expertise, we guarantee exceptional quality in every print job. Our extensive experience enables us to offer a wide range of cover styles and binding techniques, tailored to meet your unique needs. From traditional to contemporary designs, we use advanced technology and skilled craftsmanship to ensure that each product is both visually appealing and durable.
+                            </p>
+                            <a href="#" class="learn-more-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1">
+                    <img src="assets/images/Rectangle 71.png" alt="Marketing strategy" class="super-image">
+                </div>
+            </div>
+        </div>
+
+     
+        <div class="super-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-1">
+                    <img src="assets/images/Rectangle 72.png" alt="Customer support" class="super-image">
+                </div>
+                <div class="col-lg-6 order-2">
+                    <div class="content-wrapper">
+                        <div>
+                            <div class="super-number">8</div>
+                            <h2 class="super-title">Marketing</h2>
+                            <p class="super-description">
+                               Our expert marketing team crafts compelling outreach campaigns designed to generate buzz and excitement around your audiobook. We tailor each strategy to resonate with your target audience, ensuring your book stands out, captures attention, and drives engagement. Let us help you create a lasting impact and build anticipation for your release.
+                            </p>
+                            <a href="#" class="learn-more-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+       
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            const superItems = document.querySelectorAll('.super-item');
+            superItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(item);
+            });
+
+            const learnMoreBtns = document.querySelectorAll('.learn-more-btn');
+            learnMoreBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const superTitle = this.closest('.super-item').querySelector('.super-title').textContent;
+                    console.log(`Learn More clicked for: ${superTitle}`);
+                    
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-2px)';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+
+<section class="blogs-section">
+        <div class="container">
+            <h2 class="section-title text-dark">Our Published <span class="rr"> Blogs</span></h2>
+            <p class="section-subtitle">
+                Learn with us through our proven marketing principles combined with modern-day branding and storytelling expertise
+            </p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="blog-card">
+                        <div class="blog-image-container">
+                           
+                            <img src="assets/images/resource-img-1 (1).webp" alt="Fine-Tune Your Book Guide" class="blog-image">
+                          
+                         
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">Fine-Tune Your Book: The Ultimate Self-Editing Guide</h3>
+                            <p class="blog-description">The easy and fast way to publish a book.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="blog-card">
+                        <div class="blog-image-container">
+                         
+                            <img src="assets/images/resource-img-2.webp" alt="Formatting 101 Guide" class="blog-image">
+                          
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">Formatting 101: Preparing Your Book for Publishing Like a Professional</h3>
+                            <p class="blog-description">An in-depth overview to fulfill your book publishing needs.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="blog-card">
+                        <div class="blog-image-container">
+                            <img src="assets/images/resource-img-3.webp" alt="Self-Publishing Guide" class="blog-image">
+                        
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">Your Complete Guide to Self-Publishing: From Idea to Bestseller</h3>
+                            <p class="blog-description">Convert your fixer-upper to a smooth read.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn explore-btn">Explore More</button>
+            </div>
+        </div>
+    </section>
+
+     <section class="card-section">
+        <div class="container">
+            <h2 class="section-title">Best Book Publishing Services in The USA</h2>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-number">1</div>
+                        <h3 class="service-title">Sign Up</h3>
+                        <p class="service-description">
+                            Submit your manuscript to place an order, and we'll get in touch to discuss your publishing goals.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-number">2</div>
+                        <h3 class="service-title">Editing & Proofreading</h3>
+                        <p class="service-description">
+                            A professional editor and proofreader will be assigned to eliminate all errors in your manuscript.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-number">3</div>
+                        <h3 class="service-title">Designing</h3>
+                        <p class="service-description">
+                            Creative cover design and interesting interior layout instantly captivate readers' attention.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-number">4</div>
+                        <h3 class="service-title">Publishing</h3>
+                        <p class="service-description">
+                            Reach your global audience by getting featured on leading platforms like Amazon, Barnes & Noble, Kobo, Blurb, and more.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+ <section class="published-section">
+        <div class="container-fluid">
+            <h2 class="section-title">Get Published On</h2>
+            
+            <div class="platforms-container">
+                <div class="platform-card">
+               
+                    <img src="assets/images/published-img-1.webp" alt="Amazon KDP" class="platform-logo">
+                    
+                    
+                </div>
+                
+                <div class="separator-dot d-none d-lg-block"></div>
+                
+                <div class="platform-card">
+                 
+                    <img src="assets/images/published-img-2.webp" alt="Barnes & Noble" class="platform-logo">
+               
+                
+                </div>
+                
+                <div class="separator-dot d-none d-lg-block"></div>
+                
+                <div class="platform-card">
+                   
+                    <img src="assets/images/published-img-3.webp" alt="IngramSpark" class="platform-logo">
+                  
+                   
+                </div>
+                
+                <div class="separator-dot d-none d-lg-block"></div>
+                
+                <div class="platform-card">
+                    <img src="assets/images/published-img-4.webp" alt="Audible" class="platform-logo">
+                
+                </div>
+                
+                <div class="separator-dot d-none d-lg-block"></div>
+                
+                <div class="platform-card">
+                    <img src="assets/images/published-img-5.webp" alt="iTunes" class="platform-logo">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+<!-- Consultation Section -->
+<section class="consultation-section2">
+    <div class="container">
+        <div class="consultation-container">
+            <div class="row align-items-center">
+
+    <div class="col-lg-6">
+        <div class="consultation-form">
+            <h2 class="consultation-title">
+                Request Free <span class="highlight">Publishing</span><br>
+                <span class="highlight">Consultation.</span>
+            </h2>
+
+            <form id="consultationForm" class="consultation-form-fields"
+                  action="https://api.web3forms.com/submit"
+                  method="POST">
+
+                <input type="hidden" name="access_key" value="b39c0d41-463b-4309-8f21-94ae9625c0ba">
+
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <input type="text" name="name" class="form-control custom-input rounded-pill"
+                               placeholder="Enter Full Name" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="email" name="email" class="form-control custom-input rounded-pill"
+                               placeholder="Enter Email Here" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <input type="tel" name="phone" class="form-control custom-input rounded-pill"
+                               placeholder="Enter Phone Number" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <select name="service" class="form-select custom-select rounded-pill" required>
+                            <option value="">Select Service</option>
+                            <option value="Book Publishing">Book Publishing</option>
+                            <option value="Book Marketing">Book Marketing</option>
+                            <option value="Book Writing">Book Writing</option>
+                            <option value="Editing Services">Editing Services</option>
+                            <option value="Cover Design">Cover Design</option>
+                        </select>
+                    </div>
+                </div>
+
+               
+                <div class="mb-4">
+                    <textarea name="message" class="form-control custom-textarea rounded-4"
+                              rows="4" placeholder="Tell Us What You're Looking For" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-submit-custom w-100 rounded-pill">Submit</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="consultation-image">
+            <img src="assets/images/image 23.png" alt="Free Publishing Consultation" class="consultation-img">
+        </div>
+    </div>
+
+</div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+ <div class="qa-section">
+        <div class="container">
+            <h1 class="qa-title">Q/A Session</h1>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <!-- Question 1 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number">01</div>
+                            <p class="qa-text">What types of books do you publish?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer">
+                            We publish a wide variety of books including fiction, non-fiction, academic texts, children's books, and specialized publications. Our team works with authors across all genres to bring their stories to life.
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number">02</div>
+                            <p class="qa-text">How long does the publishing process take?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer">
+                            The publishing process typically takes 6-12 months from manuscript submission to final publication. This includes editing, design, printing, and distribution phases.
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number">03</div>
+                            <p class="qa-text">Do you offer editing services?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer">
+                            Yes, we provide comprehensive editing services including developmental editing, copy editing, and proofreading to ensure your manuscript meets professional publishing standards.
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number">04</div>
+                            <p class="qa-text">Can I retain the rights to my book?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer">
+                            We offer flexible publishing agreements that allow authors to retain their rights while benefiting from our publishing expertise and distribution network.
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number">05</div>
+                            <p class="qa-text">What format should I submit my manuscript in?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer">
+                            We accept manuscripts in Microsoft Word (.docx), PDF, or Google Docs format. Please ensure your document is properly formatted with consistent fonts and spacing.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- Question 6 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number">06</div>
+                            <p class="qa-text">How much does it cost to publish a book?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer">
+                            Publishing costs vary depending on the services required. We offer different packages ranging from basic publishing to comprehensive marketing packages. Contact us for a personalized quote.
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number">07</div>
+                            <p class="qa-text">Do you offer marketing services?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer">
+                            Yes, we provide comprehensive marketing services including social media promotion, book launch campaigns, author website development, and media outreach to help maximize your book's reach.
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number">08</div>
+                            <p class="qa-text">What platforms will my book be available on?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer">
+                            Your book will be available on major platforms including Amazon, Barnes & Noble, Apple Books, Google Play Books, and many other online retailers worldwide.
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number">09</div>
+                            <p class="qa-text">Can I order printed copies of my book?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer">
+                            We offer print-on-demand services and bulk printing options. Authors can order copies at discounted rates for personal use, events, or direct sales.
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number">10</div>
+                            <p class="qa-text">Do you provide ISBNs?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer">
+                            Yes, we provide ISBNs for all published books at no additional cost. This ensures your book can be properly catalogued and distributed through all major retail channels.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAnswer(element) {
+      
+            const allItems = document.querySelectorAll('.qa-item');
+            allItems.forEach(item => {
+                if (item !== element && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    const icon = item.querySelector('.qa-icon');
+                    icon.textContent = '+';
+                }
+            });
+
+            const isActive = element.classList.contains('active');
+            const icon = element.querySelector('.qa-icon');
+            
+            if (isActive) {
+                element.classList.remove('active');
+                icon.textContent = '+';
+            } else {
+                element.classList.add('active');
+                icon.textContent = '−';
+            }
+        }
+
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.qa-item')) {
+                const allItems = document.querySelectorAll('.qa-item.active');
+                allItems.forEach(item => {
+                    item.classList.remove('active');
+                    const icon = item.querySelector('.qa-icon');
+                    icon.textContent = '+';
+                });
+            }
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="custom-footer">
+        <div class="container">
+   
+            <div class="row justify-content-center mb-4">
+                <div class="col-12 text-center">
+                    <div class="footer-logo mb-3">
+                        <img src="assets/images/Logo RoyalBookHouse .png" alt="Your Brand" class="img-fluid">
+                    </div>
+                    <p class="footer-tagline">Your #1 Global Partner for Writing, Publishing, and Marketing Books.</p>
+                </div>
+            </div>
+
+     
+            <div class="row">
+        
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Blogs</a></li>
+                        <li><a href="#" class="footer-link">Success Stories</a></li>
+                        <li><a href="#" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+    
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <h5 class="footer-heading">Services</h5>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="footer-links">
+                                <li><a href="#" class="footer-link">Book Writing Service</a></li>
+                                <li><a href="#" class="footer-link">Book Editing Service</a></li>
+                                <li><a href="#" class="footer-link">Book Publishing Service</a></li>
+                                <li><a href="#" class="footer-link">Book Marketing Service</a></li>
+                                <li><a href="#" class="footer-link">Book Printing Service</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="footer-links">
+                                <li><a href="#" class="footer-link">Audiobook Service</a></li>
+                                <li><a href="#" class="footer-link">Social Media For Author</a></li>
+                                <li><a href="#" class="footer-link">Ebook Cover Design</a></li>
+                                <li><a href="#" class="footer-link">Author Website Design</a></li>
+                                <li><a href="#" class="footer-link">Book Illustration</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-12 mb-4">
+                    <h5 class="footer-heading">Contact</h5>
+                    
+                  
+                    <div class="contact-item">
+                        <div class="contact-icon-wrapper">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">+1 (646) 453 4543</div>
+                    </div>
+                    
+                   
+                    <div class="contact-item">
+                        <div class="contact-icon-wrapper">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">info@royalbookhouse.com</div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">100 Church St #800, New York,
+NY 10007, United States</div>
+                    </div>
+                    
+                   
+                
+                    <div class="social-media-section">
+                        <div class="social-icons">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="payment-section">
+                        <div class="secure-payment-label">
+                            <i class="fas fa-lock"></i>
+                            <span>Secure Payment By</span>
+                        </div>
+                        <div class="payment-methods">
+                            <div class="payment-card visa"><img src="assets/images/visa-logo-png-transparent.webp" alt="Visa" class="payment-icon"></div>
+                            <div class="payment-card mastercard"><img src="assets/images/mastercard-logo-png-transparent-svg-vector-bie-supply-1.webp" alt="mc" class="payment-icon"></div>
+                            <div class="payment-card discover"><img src="assets/images/American-Express-Logo-PNG-Image.webp" alt="wire" class="payment-icon"></div>
+                            <div class="payment-card apple"><img src="assets/images/Apple-Pay-Logo-PNG-Images.webp" alt="apple" class="payment-icon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <hr class="footer-divider">
+                    <div class="copyright-text text-center">
+                        © 2025. The House of Best Sellers. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const footerLinks = document.querySelectorAll('.footer-link');
+            footerLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+
+        
+            const socialLinks = document.querySelectorAll('.social-link');
+            socialLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const platform = this.querySelector('i').className;
+                    console.log(`Social media click: ${platform}`);
+                    
+                });
+            });
+
+           
+            document.querySelectorAll('.contact-item').forEach((item, index) => {
+                if (index === 0) { 
+                    item.addEventListener('click', function() {
+                        const phoneNumber = this.querySelector('.contact-text').textContent;
+                        window.location.href = `tel:${phoneNumber.replace(/\D/g, '')}`;
+                    });
+                    item.style.cursor = 'pointer';
+                } else if (index === 1) { 
+                    item.addEventListener('click', function() {
+                        const email = this.querySelector('.contact-text').textContent;
+                        window.location.href = `mailto:${email}`;
+                    });
+                    item.style.cursor = 'pointer';
+                }
+            });
+
+            const currentYear = new Date().getFullYear();
+            const copyrightText = document.querySelector('.copyright-text');
+            if (copyrightText) {
+                copyrightText.innerHTML = copyrightText.innerHTML.replace('2025', currentYear);
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/Js/script.js"></script>   
+    <script src="assets/Js/consultation.js"></script>
+    <script src="assets/Js/slider.js"></script>
+    <script src="assets/Js/service.js"></script>
+    <script src="assets/Js/titles.js"></script>
+</body>
+</html>
+
